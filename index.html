@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark">
-  <meta name="description" content="Privacy Policy for Atlas — Safari Copilot.">
-  <title>Privacy Policy | Atlas — Safari Copilot</title>
+  <meta name="description" content="Privacy Policy and Terms of Use for Atlas — Safari Copilot, including Apple’s Standard EULA.">
+  <title>Privacy Policy &amp; Terms of Use | Atlas — Safari Copilot</title>
   <style>
     :root { color-scheme: dark; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #1B242A; color: #fff; }
     * { box-sizing: border-box; }
@@ -21,9 +21,6 @@
     .date, footer { color: #d0d7dc; font-size: 14px; }
     .date { margin: 0; }
     .highlight { border-left: 3px solid #cad8e1; padding: 12px 18px; background: #25323a; }
-    .review { padding: 18px 20px; border: 1px solid #a99160; border-radius: 8px; background: #302e27; }
-    .review p:last-child { margin-bottom: 0; }
-    .label { display: block; font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #f4dba8; margin-bottom: 6px; }
     a { color: #d5eaff; text-underline-offset: 4px; overflow-wrap: anywhere; }
     a:focus-visible { outline: 2px solid #fff; outline-offset: 5px; }
     li + li { margin-top: 10px; }
@@ -43,20 +40,15 @@
 
     <p class="highlight"><strong>Atlas uses the ChatGPT account you choose to connect. Atlas does not collect or store your ChatGPT password.</strong></p>
 
-    <!-- PUBLISHER: Resolve this notice and the storage details below before publishing. -->
-    <aside class="review" aria-label="Publisher review required">
-      <span class="label">Publisher note — replace before publishing</span>
-      <p>The support email below is a placeholder. Confirm an actively monitored address, verify this policy against the released app, and complete the storage and retention details before App Store submission. Remove publisher notes after review.</p>
-    </aside>
-
-    <section aria-labelledby="overview">
+<section aria-labelledby="overview">
       <h2 id="overview">1. Overview</h2>
       <p>Atlas — Safari Copilot provides page-aware assistance through ChatGPT while you use Safari. This policy explains the page context Atlas accesses, how it is used, and the choices available to you.</p>
     </section>
 
     <section aria-labelledby="access">
       <h2 id="access">2. What Atlas accesses</h2>
-      <p>Atlas accesses context from the active Safari page only when you grant the necessary permission. Depending on the page and the assistance requested, this context may include the page title, web address, selected text, or page content.</p>
+      <p>Atlas accesses context from the active Safari page only when you grant the necessary permission. When Page Context is enabled, this may include the page title, web address, selected text, a bounded excerpt of page content, and information about page controls used for visual guidance. Atlas refreshes context as the active page changes. Private browsing tabs are excluded from this page-context capture.</p>
+      <p>Atlas also processes the messages you send, ChatGPT responses and conversation information shown in the panel, and files you explicitly choose to attach to ChatGPT.</p>
       <p>Page context can contain personal or sensitive information displayed on the page. Consider the contents of a page before allowing Atlas to use it.</p>
     </section>
 
@@ -68,17 +60,21 @@
     <section aria-labelledby="connection">
       <h2 id="connection">4. Your ChatGPT connection</h2>
       <p>You authenticate with your own ChatGPT account through ChatGPT’s sign-in experience. Atlas does not collect or store your ChatGPT password.</p>
-      <p>Information submitted to ChatGPT is subject to OpenAI’s terms, privacy policy, and the data controls available for your account. This includes OpenAI’s handling and retention of conversations and submitted page context.</p>
+      <p>Information submitted to ChatGPT is subject to OpenAI’s terms, privacy policy, and the data controls available for your account. This includes OpenAI’s handling and retention of conversations, submitted page context, and attachments. Atlas reads conversation history and available account options to show recent chats and controls in its panel.</p>
     </section>
 
     <section aria-labelledby="storage">
       <h2 id="storage">5. Data storage and retention</h2>
-      <p>Atlas is designed to minimize data storage. Any diagnostics or subscription-related data collected must be limited to what is needed to operate the app, support users, or manage subscription access.</p>
-      <p>This policy does not claim that all information stays on your device, that no information is stored, or that data is deleted immediately. Information processed by ChatGPT or Apple is governed by the respective provider’s policies and your account settings.</p>
-      <div class="review">
-        <span class="label">Publisher note — implementation details required</span>
-        <p>Accurately describe any information the released app stores, including local settings, page context, connection or session data, diagnostics, and subscription records, if applicable. Specify where it is stored, its purpose, who receives it, retention periods or criteria, and how it is deleted. If a category is not collected, state that only after verifying the implementation. Replace this note with confirmed practices before publishing.</p>
-      </div>
+      <p>Atlas is designed to minimize storage, but it does keep information on your Mac to maintain the Safari panel and your ChatGPT connection. The current app uses local app preferences, shared app-and-extension storage, and WebKit website storage.</p>
+      <ul>
+        <li><strong>Page context:</strong> the latest permitted page snapshot is stored locally for the app and extension to exchange. It is replaced as new context arrives and removed when Page Context is turned off or the extension clears the active page. Atlas stops using a snapshot after about 12 seconds without a refresh; this freshness limit is not a timed deletion guarantee. If the app or extension stops unexpectedly, a stored snapshot can remain until it is replaced or cleared.</li>
+        <li><strong>Messages and conversation state:</strong> Atlas saves up to the latest 80 panel messages in local preferences, together with the current conversation address. Shared local panel state may also contain messages, recent conversation information, account options, pending requests, and the latest response. These records are updated or replaced during use. Starting a new chat replaces the current local message view; a fresh Safari session resets that view when Atlas processes the session change. These actions do not delete conversations from your ChatGPT account.</li>
+        <li><strong>Settings and identifiers:</strong> page-context preferences, setup status, panel state, session identifiers, and conversation identifiers used to manage context remain locally until updated or the relevant app data is removed. There is no fixed automatic expiry for all local preferences.</li>
+        <li><strong>ChatGPT website data:</strong> WebKit stores cookies and other website data locally so you can remain signed in. These may include authentication session information, but Atlas does not collect or store your ChatGPT password. Website data can remain between launches, subject to the website’s expiry rules and removal of the relevant local data. Starting a new chat does not clear these cookies.</li>
+        <li><strong>Subscriptions:</strong> Atlas reads verified purchase and entitlement information from Apple to determine access and restore purchases. The current access and offer state is also reflected in local panel state and refreshed through StoreKit. Apple maintains its own purchase records under its policies.</li>
+        <li><strong>Diagnostics:</strong> Atlas writes operational events, such as connection status, request failures, and purchase-verification failures, to the macOS logging system. Log retention is managed by macOS; Atlas does not promise a fixed deletion interval. The current app does not include a separate third-party analytics or crash-reporting service or an automatic upload of these logs to an Atlas-operated server.</li>
+      </ul>
+      <p>The current app does not send your conversations or page context to an Atlas-operated backend. Requests and any selected file attachments are processed by ChatGPT. Copies held by OpenAI, and purchase information held by Apple, follow those providers’ retention and deletion policies and your account settings.</p>
     </section>
 
     <section aria-labelledby="payments">
@@ -92,6 +88,7 @@
       <ul>
         <li><strong>OpenAI / ChatGPT:</strong> provides authentication for your ChatGPT account and processes requests and page context submitted for assistance. See the <a href="https://openai.com/policies/privacy-policy/">OpenAI Privacy Policy</a>.</li>
         <li><strong>Apple:</strong> provides Safari permission controls, App Store distribution, and payment and subscription services. See the <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</li>
+        <li><strong>GitHub Pages:</strong> hosts this privacy page. Visiting the page sends ordinary web-request information to GitHub. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>. This page itself contains no analytics scripts, tracking pixels, or external assets.</li>
       </ul>
       <p>These services have their own privacy practices and account controls. Atlas cannot delete information held independently by these providers on your behalf.</p>
     </section>
@@ -105,8 +102,10 @@
     <section aria-labelledby="contact">
       <h2 id="contact">9. Data deletion and contact</h2>
       <p>For privacy questions or to request deletion of any personal information held by the Atlas operator, contact the support address below. Please identify the request and provide only the information needed to locate relevant records; do not send passwords or sensitive page content.</p>
-      <!-- PUBLISHER: Replace BOTH the mailto address and visible email text. -->
-      <p><a href="mailto:support@atlasforsafari.com">support@atlasforsafari.com</a><br><strong class="label">Placeholder support email — replace or verify before publishing</strong></p>
+        <p><a href="mailto:support@atlassafari.com">support@atlassafari.com</a></p>
+      <p>To stop new page-context collection, turn Page Context off in Atlas and revoke its website permissions in Safari. To end your ChatGPT sign-in session, open ChatGPT from Atlas and use ChatGPT’s sign-out control. Signing out, starting a new chat, or uninstalling Atlas should not be treated as a complete deletion of all local preferences, caches, backups, or provider-held records.</p>
+      <p>For help removing Atlas’s remaining local app data and WebKit website data, contact support. These records are on your Mac; support cannot remotely erase them. Copies in device backups are controlled by your backup settings.</p>
+      <p>If you email support, your email address, message, and any information you choose to include are used to respond and resolve the request. Support correspondence is retained for handling the request and necessary follow-up, subject to any applicable legal retention obligations. You can request deletion through the same address.</p>
       <p>For conversations or other information held by OpenAI, use ChatGPT’s data controls or contact OpenAI. For information held by Apple, use Apple’s privacy and account controls. Deleting data or uninstalling Atlas does not cancel an Apple subscription; manage that separately through Apple.</p>
     </section>
 
@@ -120,7 +119,16 @@
       <p>This policy may be updated to reflect changes to Atlas or its privacy practices. The effective date at the top identifies the current version.</p>
     </section>
 
-    <footer>Atlas — Safari Copilot · Privacy Policy</footer>
+    <section aria-labelledby="terms">
+      <h2 id="terms">12. Terms of Use</h2>
+      <p>Atlas — Safari Copilot is licensed to you under Apple’s <strong>Standard End User License Agreement (Standard EULA)</strong>. The Standard EULA is the Terms of Use for the Atlas app and governs your license to install and use it.</p>
+      <p><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Read the full Apple Standard EULA (Terms of Use)</a>.</p>
+      <p>Atlas subscriptions and payments are handled by Apple through the App Store. Refer to the purchase screen for the applicable price, billing period, renewal terms, and any trial offer. Manage or cancel your Atlas subscription in your Apple account’s subscription settings.</p>
+      <p>Your use of ChatGPT is separately subject to OpenAI’s applicable terms and account requirements. An Atlas subscription does not include or replace a ChatGPT subscription.</p>
+      <p>For questions about these terms, contact <a href="mailto:support@atlassafari.com">support@atlassafari.com</a>.</p>
+    </section>
+
+    <footer>Atlas — Safari Copilot · Privacy Policy<br><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use — Apple Standard EULA</a></footer>
   </main>
 </body>
 </html>
